@@ -1,0 +1,10 @@
+version: '3'
+services:
+    datascience-notebook:
+        image: jupyter/datascience-notebook:latest
+        volumes:
+            - .:/home/jovyan/work
+            - /data:/home/jovyan/datasets
+        ports:
+            - 8888:8888
+        command: "start-notebook.sh"
